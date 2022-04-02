@@ -20,8 +20,18 @@
 //
 //------------------------------------------------------------------------------
 
-#include <iomanip>
-#include <iostream>
+#ifndef INC_GNU_IOMANIP_H
+#define INC_GNU_IOMANIP_H
+
+
+#if defined __GNUC__ && defined __GNUC_MINOR__
+# define _GNUC_BEFORE(maj,min) ((__GNUC__<<16)+__GNUC_MINOR__<((maj)<<16)+(min))
+#else
+# define _GNUC_BEFORE(maj,min) 0
+#endif
+
+
+#if _GNUC_BEFORE(3,0)
 
 namespace{
 ostream& left (ostream& os){os.setf(ios::left ,ios::adjustfield); return os;};
@@ -30,3 +40,7 @@ ostream& fixed(ostream& os){os.setf(ios::fixed,ios::floatfield);  return os;};
 ostream& showpos  (ostream& os){os.setf(ios::showpos); return os;};
 ostream& noshowpos(ostream& os){os.unsetf(ios::showpos); return os;};
 }
+
+#endif  // Test der Compilerversion
+
+#endif  // include-Blocker

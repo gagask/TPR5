@@ -331,7 +331,7 @@ ostream& operator << (ostream& os, const Angle& alpha)
   //
   int    D,M;       // degrees, minutes
   double S;         // seconds
-  long   flags;     // output stream format flags
+  std::ios_base::fmtflags   flags;     // output stream format flags
   int    w,p,sp;    // width, precision, showpos
   double fac;       // factor for rounding
   double DegRound;  // rounded value (positive)

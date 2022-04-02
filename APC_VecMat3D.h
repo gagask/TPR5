@@ -142,6 +142,11 @@ class Vec3D
 //
 // Mat3D: 3 dimensional transformation matrices
 //
+
+Mat3D R_x(double RotAngle);
+Mat3D R_y(double RotAngle);
+Mat3D R_z(double RotAngle);
+
 class Mat3D
 {
   public:

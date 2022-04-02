@@ -278,7 +278,7 @@ void Position::Print()
 // Main program
 //
 //------------------------------------------------------------------------------
-void main() {
+int main() {
 
   //
   // Variables
